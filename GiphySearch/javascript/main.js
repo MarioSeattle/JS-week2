@@ -1,6 +1,6 @@
 /* 1. Grab the input value */
 
-var input = document.querySelector("input").value;
+var input = document.querySelector("input");
 console.log(input)
 
 
