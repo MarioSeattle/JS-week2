@@ -1,7 +1,19 @@
 /* 1. Grab the input value */
+//Grab bottom
 
-var input = document.querySelector("input");
-console.log(input)
+document.querySelector(".js-go").addEventListener("click", function(){
+
+	//alert("test");
+
+	var input = document.querySelector("input").value;
+
+	console.log(input);
+
+	pushToDOM(input);
+
+
+
+});
 
 
 
@@ -18,3 +30,24 @@ console.log(input)
 
 
 /* 3. Show me the GIFs */
+
+function pushToDOM (input) {
+
+	alert("Esta Pasando?");
+
+	var container = document.querySelector(".js-container");
+	container.innerHTML = input;
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
