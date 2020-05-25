@@ -1,22 +1,26 @@
 /* 1. Grab the input value */
-//Grab bottom
 
-document.querySelector(".js-go").addEventListener("click", function(){
 
-	//alert("test");
+document.querySelector(".js-go").addEventListener("click", function(e){
 
 	var input = document.querySelector("input").value;
 
-	console.log(input);
+});
 
-	pushToDOM(input);
+//keyup to make it work with enter key
 
+document.querySelector(".js-userinput").addEventListener("keyup", function(e){
+
+	var input = document.querySelector("input").value;
+	
+	//If enter key is press then execute
+	if(e.which === 13) {
+
+		pushToDOM(input);
+	}
 
 
 });
-
-
-
 
 
 /* 2. do the data stuff with the API */
@@ -33,13 +37,10 @@ document.querySelector(".js-go").addEventListener("click", function(){
 
 function pushToDOM (input) {
 
-	alert("Esta Pasando?");
+	//alert("Esta Pasando?");
 
 	var container = document.querySelector(".js-container");
 	container.innerHTML = input;
-
-
-
 
 }
 
