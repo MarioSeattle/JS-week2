@@ -14,7 +14,7 @@ document.querySelector(".js-userinput").addEventListener('keyup',function(e){
 
   // if the key ENTER is pressed...
   if(e.which === 13) {
-    pushToDOM(input);
+  pushToDOM(input);
   }
 
 });
@@ -41,14 +41,28 @@ GiphyAJAXCall.addEventListener('load',function(e){
 /* 3. Show me the GIFs */
 
 
-function pushToDOM(input) {
+function pushToDOM(input){
 
   var response = JSON.parse(input);
 
-  var imageURL = response.data[0].images.fixed_height.url;
-  console.log(imageURL);
+  var imageURLs = response.data;
 
-  var container = document.querySelector(".js-container");
-  container.innerHTML = "<img src=\"https://media3.giphy.com/media/Z1kpfgtHmpWHS/200.gif\">";
+
+  imageURLs.forEach(function(image){
+
+    var src = image.images.fixed_height.url;
+
+    var container = document.querySelector(".js-container");
+    container.innerHTML += "<img src=\"" + src + "\" class=\"container-image\">";
+
+
+});
+
 
 }
+
+
+
+
+
+
